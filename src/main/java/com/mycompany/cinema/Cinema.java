@@ -4,6 +4,11 @@
  */
 package com.mycompany.cinema;
 
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JTextField;
+
 /**
  *
  * @author Carla
@@ -17,6 +22,13 @@ public class Cinema extends javax.swing.JFrame {
         initComponents();
         this.setLocationRelativeTo(null);
     }
+    
+    double totalIncome = 0;
+    int sales1 = 0;
+    int sales2 = 0;
+    int sales3 = 0;
+    int sales4 = 0;
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -42,6 +54,7 @@ public class Cinema extends javax.swing.JFrame {
         jButtonOccupation1 = new javax.swing.JButton();
         jButtonClean1 = new javax.swing.JButton();
         jButtonIncome1 = new javax.swing.JButton();
+        jLabelScreen1 = new javax.swing.JLabel();
         jPanelFilm2 = new javax.swing.JPanel();
         jLabelFilmName2 = new javax.swing.JLabel();
         jLabelFilm2 = new javax.swing.JLabel();
@@ -57,6 +70,7 @@ public class Cinema extends javax.swing.JFrame {
         jButtonOccupation2 = new javax.swing.JButton();
         jButtonClean2 = new javax.swing.JButton();
         jButtonIncome2 = new javax.swing.JButton();
+        jLabelScreen2 = new javax.swing.JLabel();
         jPanelFilm3 = new javax.swing.JPanel();
         jLabelFilmName3 = new javax.swing.JLabel();
         jLabelFilm3 = new javax.swing.JLabel();
@@ -72,6 +86,7 @@ public class Cinema extends javax.swing.JFrame {
         jButtonOccupation3 = new javax.swing.JButton();
         jButtonClean3 = new javax.swing.JButton();
         jButtonIncome3 = new javax.swing.JButton();
+        jLabelScreen3 = new javax.swing.JLabel();
         jPanelFilm4 = new javax.swing.JPanel();
         jLabelFilmName4 = new javax.swing.JLabel();
         jLabelFilm4 = new javax.swing.JLabel();
@@ -87,6 +102,12 @@ public class Cinema extends javax.swing.JFrame {
         jButtonOccupation4 = new javax.swing.JButton();
         jButtonClean4 = new javax.swing.JButton();
         jButtonIncome4 = new javax.swing.JButton();
+        jLabelScreen4 = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
+        jSliderSales = new javax.swing.JSlider();
+        jLabelSales = new javax.swing.JLabel();
+        jLabelTotalIncome = new javax.swing.JLabel();
+        jButtonTotalIncome = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -99,45 +120,81 @@ public class Cinema extends javax.swing.JFrame {
 
         jLabelFilm1.setText("Película:");
 
+        jTextFieldFilmSelector1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldFilmSelector1ActionPerformed(evt);
+            }
+        });
+
         jButtonChange1.setText("Cambiar");
+        jButtonChange1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonChange1ActionPerformed(evt);
+            }
+        });
 
-        jLabelTotalSales1.setText("Total Sales: ");
+        jLabelTotalSales1.setText("Total sales: 0");
 
-        jLabelCapacity1.setText("Capacity: ");
+        jLabelCapacity1.setText("Capacity: 0/100");
 
-        jLabelIncome1.setText("Income: ");
+        jLabelIncome1.setText("Income: 0€");
 
-        jLabelPrice1.setText("Price: ");
+        jLabelPrice1.setText("Price: 6€");
 
-        jLabelOccPercentage1.setText("Occupation percentage: ");
+        jLabelOccPercentage1.setText("Occupation percentage: 0%");
 
         jButtonAddSales1.setText("Add Sales");
+        jButtonAddSales1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonAddSales1ActionPerformed(evt);
+            }
+        });
 
         jButtonRemoveSales1.setText("Remove sales");
+        jButtonRemoveSales1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonRemoveSales1ActionPerformed(evt);
+            }
+        });
 
         jButtonOccupation1.setText("% Occupation");
+        jButtonOccupation1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonOccupation1ActionPerformed(evt);
+            }
+        });
 
         jButtonClean1.setText("Clean");
+        jButtonClean1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonClean1ActionPerformed(evt);
+            }
+        });
 
         jButtonIncome1.setText("Income");
+        jButtonIncome1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonIncome1ActionPerformed(evt);
+            }
+        });
+
+        jLabelScreen1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabelScreen1.setText("SALA PREMIUM");
 
         javax.swing.GroupLayout jPanelFilm1Layout = new javax.swing.GroupLayout(jPanelFilm1);
         jPanelFilm1.setLayout(jPanelFilm1Layout);
         jPanelFilm1Layout.setHorizontalGroup(
             jPanelFilm1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelFilm1Layout.createSequentialGroup()
-                .addContainerGap(15, Short.MAX_VALUE)
+                .addContainerGap(7, Short.MAX_VALUE)
                 .addGroup(jPanelFilm1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanelFilm1Layout.createSequentialGroup()
-                        .addGroup(jPanelFilm1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabelFilmName1)
-                            .addGroup(jPanelFilm1Layout.createSequentialGroup()
-                                .addComponent(jLabelFilm1, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jTextFieldFilmSelector1, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(jButtonChange1)))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(jLabelFilm1, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jTextFieldFilmSelector1, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jButtonChange1)
+                        .addContainerGap(98, Short.MAX_VALUE))
                     .addGroup(jPanelFilm1Layout.createSequentialGroup()
                         .addGroup(jPanelFilm1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabelTotalSales1, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -147,33 +204,47 @@ public class Cinema extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(jPanelFilm1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabelPrice1, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabelOccPercentage1, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(jPanelFilm1Layout.createSequentialGroup()
+                            .addComponent(jLabelOccPercentage1, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+            .addGroup(jPanelFilm1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabelScreen1)
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(jPanelFilm1Layout.createSequentialGroup()
+                .addGroup(jPanelFilm1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelFilm1Layout.createSequentialGroup()
+                        .addContainerGap()
                         .addComponent(jButtonAddSales1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jButtonRemoveSales1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jButtonOccupation1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButtonClean1)
-                        .addContainerGap(46, Short.MAX_VALUE))))
-            .addGroup(jPanelFilm1Layout.createSequentialGroup()
-                .addGap(174, 174, 174)
-                .addComponent(jButtonIncome1)
-                .addGap(0, 0, Short.MAX_VALUE))
+                        .addComponent(jButtonClean1))
+                    .addGroup(jPanelFilm1Layout.createSequentialGroup()
+                        .addGroup(jPanelFilm1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanelFilm1Layout.createSequentialGroup()
+                                .addGap(189, 189, 189)
+                                .addComponent(jButtonIncome1))
+                            .addGroup(jPanelFilm1Layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(jLabelFilmName1, javax.swing.GroupLayout.PREFERRED_SIZE, 420, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
         );
         jPanelFilm1Layout.setVerticalGroup(
             jPanelFilm1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelFilm1Layout.createSequentialGroup()
-                .addContainerGap(26, Short.MAX_VALUE)
+                .addContainerGap(15, Short.MAX_VALUE)
+                .addComponent(jLabelScreen1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabelFilmName1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 39, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
                 .addGroup(jPanelFilm1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabelFilm1)
                     .addComponent(jTextFieldFilmSelector1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButtonChange1))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 74, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 67, Short.MAX_VALUE)
                 .addGroup(jPanelFilm1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabelTotalSales1)
                     .addComponent(jLabelPrice1))
@@ -183,7 +254,7 @@ public class Cinema extends javax.swing.JFrame {
                     .addComponent(jLabelOccPercentage1))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabelIncome1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 31, Short.MAX_VALUE)
                 .addGroup(jPanelFilm1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButtonAddSales1)
                     .addComponent(jButtonRemoveSales1)
@@ -191,7 +262,7 @@ public class Cinema extends javax.swing.JFrame {
                     .addComponent(jButtonClean1))
                 .addGap(18, 18, 18)
                 .addComponent(jButtonIncome1)
-                .addContainerGap(30, Short.MAX_VALUE))
+                .addContainerGap(28, Short.MAX_VALUE))
         );
 
         jPanelFilm2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
@@ -204,44 +275,69 @@ public class Cinema extends javax.swing.JFrame {
         jLabelFilm2.setText("Película:");
 
         jButtonChange2.setText("Cambiar");
+        jButtonChange2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonChange2ActionPerformed(evt);
+            }
+        });
 
-        jLabelTotalSales2.setText("Total Sales: ");
+        jLabelTotalSales2.setText("Total sales: 0");
 
-        jLabelCapacity2.setText("Capacity: ");
+        jLabelCapacity2.setText("Capacity:  0/70");
 
-        jLabelIncome2.setText("Income: ");
+        jLabelIncome2.setText("Income: 0€");
 
-        jLabelPrice2.setText("Price: ");
+        jLabelPrice2.setText("Price: 8€");
 
-        jLabelOccPercentage2.setText("Occupation percentage: ");
+        jLabelOccPercentage2.setText("Occupation percentage: 0%");
 
         jButtonAddSales2.setText("Add Sales");
+        jButtonAddSales2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonAddSales2ActionPerformed(evt);
+            }
+        });
 
         jButtonRemoveSales2.setText("Remove sales");
+        jButtonRemoveSales2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonRemoveSales2ActionPerformed(evt);
+            }
+        });
 
         jButtonOccupation2.setText("% Occupation");
+        jButtonOccupation2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonOccupation2ActionPerformed(evt);
+            }
+        });
 
         jButtonClean2.setText("Clean");
 
         jButtonIncome2.setText("Income");
+        jButtonIncome2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonIncome2ActionPerformed(evt);
+            }
+        });
+
+        jLabelScreen2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabelScreen2.setText("SALA STANDARD A");
 
         javax.swing.GroupLayout jPanelFilm2Layout = new javax.swing.GroupLayout(jPanelFilm2);
         jPanelFilm2.setLayout(jPanelFilm2Layout);
         jPanelFilm2Layout.setHorizontalGroup(
             jPanelFilm2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelFilm2Layout.createSequentialGroup()
-                .addContainerGap(15, Short.MAX_VALUE)
+                .addContainerGap(7, Short.MAX_VALUE)
                 .addGroup(jPanelFilm2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanelFilm2Layout.createSequentialGroup()
-                        .addGroup(jPanelFilm2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabelFilmName2)
-                            .addGroup(jPanelFilm2Layout.createSequentialGroup()
-                                .addComponent(jLabelFilm2, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jTextFieldFilmSelector2, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(jButtonChange2)))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(jLabelFilm2, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jTextFieldFilmSelector2, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jButtonChange2)
+                        .addContainerGap(98, Short.MAX_VALUE))
                     .addGroup(jPanelFilm2Layout.createSequentialGroup()
                         .addGroup(jPanelFilm2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabelTotalSales2, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -251,33 +347,44 @@ public class Cinema extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(jPanelFilm2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabelPrice2, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabelOccPercentage2, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(jPanelFilm2Layout.createSequentialGroup()
-                        .addComponent(jButtonAddSales2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
-                        .addComponent(jButtonRemoveSales2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButtonOccupation2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButtonClean2)
-                        .addContainerGap(46, Short.MAX_VALUE))))
+                            .addComponent(jLabelOccPercentage2, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
             .addGroup(jPanelFilm2Layout.createSequentialGroup()
-                .addGap(174, 174, 174)
-                .addComponent(jButtonIncome2)
+                .addContainerGap()
+                .addComponent(jLabelScreen2)
                 .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelFilm2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jButtonAddSales2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButtonRemoveSales2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButtonOccupation2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButtonClean2)
+                .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelFilm2Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButtonIncome2)
+                .addGap(189, 189, 189))
+            .addGroup(jPanelFilm2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabelFilmName2, javax.swing.GroupLayout.PREFERRED_SIZE, 425, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanelFilm2Layout.setVerticalGroup(
             jPanelFilm2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelFilm2Layout.createSequentialGroup()
-                .addContainerGap(26, Short.MAX_VALUE)
+                .addContainerGap(11, Short.MAX_VALUE)
+                .addComponent(jLabelScreen2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabelFilmName2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 39, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
                 .addGroup(jPanelFilm2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabelFilm2)
                     .addComponent(jTextFieldFilmSelector2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButtonChange2))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 74, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 70, Short.MAX_VALUE)
                 .addGroup(jPanelFilm2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabelTotalSales2)
                     .addComponent(jLabelPrice2))
@@ -287,7 +394,7 @@ public class Cinema extends javax.swing.JFrame {
                     .addComponent(jLabelOccPercentage2))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabelIncome2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
                 .addGroup(jPanelFilm2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButtonAddSales2)
                     .addComponent(jButtonRemoveSales2)
@@ -295,7 +402,7 @@ public class Cinema extends javax.swing.JFrame {
                     .addComponent(jButtonClean2))
                 .addGap(18, 18, 18)
                 .addComponent(jButtonIncome2)
-                .addContainerGap(30, Short.MAX_VALUE))
+                .addContainerGap(28, Short.MAX_VALUE))
         );
 
         jPanelFilm3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
@@ -308,44 +415,69 @@ public class Cinema extends javax.swing.JFrame {
         jLabelFilm3.setText("Película:");
 
         jButtonChange3.setText("Cambiar");
+        jButtonChange3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonChange3ActionPerformed(evt);
+            }
+        });
 
-        jLabelTotalSales3.setText("Total Sales: ");
+        jLabelTotalSales3.setText("Total sales: 0");
 
-        jLabelCapacity3.setText("Capacity: ");
+        jLabelCapacity3.setText("Capacity: 0/70");
 
-        jLabelIncome3.setText("Income: ");
+        jLabelIncome3.setText("Income: 0€");
 
-        jLabelPrice3.setText("Price: ");
+        jLabelPrice3.setText("Price: 8€");
 
-        jLabelOccPercentage3.setText("Occupation percentage: ");
+        jLabelOccPercentage3.setText("Occupation percentage: 0%");
 
         jButtonAddSales3.setText("Add Sales");
+        jButtonAddSales3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonAddSales3ActionPerformed(evt);
+            }
+        });
 
         jButtonRemoveSales3.setText("Remove sales");
+        jButtonRemoveSales3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonRemoveSales3ActionPerformed(evt);
+            }
+        });
 
         jButtonOccupation3.setText("% Occupation");
+        jButtonOccupation3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonOccupation3ActionPerformed(evt);
+            }
+        });
 
         jButtonClean3.setText("Clean");
 
         jButtonIncome3.setText("Income");
+        jButtonIncome3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonIncome3ActionPerformed(evt);
+            }
+        });
+
+        jLabelScreen3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabelScreen3.setText("SALA STANDARD B");
 
         javax.swing.GroupLayout jPanelFilm3Layout = new javax.swing.GroupLayout(jPanelFilm3);
         jPanelFilm3.setLayout(jPanelFilm3Layout);
         jPanelFilm3Layout.setHorizontalGroup(
             jPanelFilm3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelFilm3Layout.createSequentialGroup()
-                .addContainerGap(15, Short.MAX_VALUE)
+                .addContainerGap(7, Short.MAX_VALUE)
                 .addGroup(jPanelFilm3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanelFilm3Layout.createSequentialGroup()
-                        .addGroup(jPanelFilm3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabelFilmName3)
-                            .addGroup(jPanelFilm3Layout.createSequentialGroup()
-                                .addComponent(jLabelFilm3, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jTextFieldFilmSelector3, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(jButtonChange3)))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(jLabelFilm3, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jTextFieldFilmSelector3, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jButtonChange3)
+                        .addContainerGap(98, Short.MAX_VALUE))
                     .addGroup(jPanelFilm3Layout.createSequentialGroup()
                         .addGroup(jPanelFilm3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabelTotalSales3, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -355,33 +487,46 @@ public class Cinema extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(jPanelFilm3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabelPrice3, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabelOccPercentage3, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(jLabelOccPercentage3, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+            .addGroup(jPanelFilm3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabelScreen3)
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelFilm3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanelFilm3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanelFilm3Layout.createSequentialGroup()
                         .addComponent(jButtonAddSales3)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jButtonRemoveSales3)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jButtonOccupation3)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButtonClean3)
-                        .addContainerGap(46, Short.MAX_VALUE))))
+                        .addComponent(jButtonClean3))
+                    .addGroup(jPanelFilm3Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 177, Short.MAX_VALUE)
+                        .addComponent(jButtonIncome3)
+                        .addGap(189, 189, 189)))
+                .addContainerGap())
             .addGroup(jPanelFilm3Layout.createSequentialGroup()
-                .addGap(174, 174, 174)
-                .addComponent(jButtonIncome3)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addContainerGap()
+                .addComponent(jLabelFilmName3, javax.swing.GroupLayout.PREFERRED_SIZE, 424, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanelFilm3Layout.setVerticalGroup(
             jPanelFilm3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelFilm3Layout.createSequentialGroup()
-                .addContainerGap(26, Short.MAX_VALUE)
+                .addContainerGap(9, Short.MAX_VALUE)
+                .addComponent(jLabelScreen3)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabelFilmName3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 39, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
                 .addGroup(jPanelFilm3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabelFilm3)
                     .addComponent(jTextFieldFilmSelector3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButtonChange3))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 74, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 68, Short.MAX_VALUE)
                 .addGroup(jPanelFilm3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabelTotalSales3)
                     .addComponent(jLabelPrice3))
@@ -391,7 +536,7 @@ public class Cinema extends javax.swing.JFrame {
                     .addComponent(jLabelOccPercentage3))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabelIncome3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE)
                 .addGroup(jPanelFilm3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButtonAddSales3)
                     .addComponent(jButtonRemoveSales3)
@@ -399,7 +544,7 @@ public class Cinema extends javax.swing.JFrame {
                     .addComponent(jButtonClean3))
                 .addGap(18, 18, 18)
                 .addComponent(jButtonIncome3)
-                .addContainerGap(30, Short.MAX_VALUE))
+                .addGap(28, 28, 28))
         );
 
         jPanelFilm4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
@@ -412,44 +557,69 @@ public class Cinema extends javax.swing.JFrame {
         jLabelFilm4.setText("Película:");
 
         jButtonChange4.setText("Cambiar");
+        jButtonChange4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonChange4ActionPerformed(evt);
+            }
+        });
 
-        jLabelTotalSales4.setText("Total Sales: ");
+        jLabelTotalSales4.setText("Total sales: 0");
 
-        jLabelCapacity4.setText("Capacity: ");
+        jLabelCapacity4.setText("Capacity: 0/30");
 
-        jLabelIncome4.setText("Income: ");
+        jLabelIncome4.setText("Income: 0€");
 
-        jLabelPrice4.setText("Price: ");
+        jLabelPrice4.setText("Price: 12€");
 
-        jLabelOccPercentage4.setText("Occupation percentage: ");
+        jLabelOccPercentage4.setText("Occupation percentage: 0%");
 
         jButtonAddSales4.setText("Add Sales");
+        jButtonAddSales4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonAddSales4ActionPerformed(evt);
+            }
+        });
 
         jButtonRemoveSales4.setText("Remove sales");
+        jButtonRemoveSales4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonRemoveSales4ActionPerformed(evt);
+            }
+        });
 
         jButtonOccupation4.setText("% Occupation");
+        jButtonOccupation4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonOccupation4ActionPerformed(evt);
+            }
+        });
 
         jButtonClean4.setText("Clean");
 
         jButtonIncome4.setText("Income");
+        jButtonIncome4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonIncome4ActionPerformed(evt);
+            }
+        });
+
+        jLabelScreen4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabelScreen4.setText("SALA MINI");
 
         javax.swing.GroupLayout jPanelFilm4Layout = new javax.swing.GroupLayout(jPanelFilm4);
         jPanelFilm4.setLayout(jPanelFilm4Layout);
         jPanelFilm4Layout.setHorizontalGroup(
             jPanelFilm4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelFilm4Layout.createSequentialGroup()
-                .addContainerGap(15, Short.MAX_VALUE)
+                .addContainerGap(7, Short.MAX_VALUE)
                 .addGroup(jPanelFilm4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanelFilm4Layout.createSequentialGroup()
-                        .addGroup(jPanelFilm4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabelFilmName4)
-                            .addGroup(jPanelFilm4Layout.createSequentialGroup()
-                                .addComponent(jLabelFilm4, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jTextFieldFilmSelector4, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(jButtonChange4)))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(jLabelFilm4, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jTextFieldFilmSelector4, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jButtonChange4)
+                        .addContainerGap(98, Short.MAX_VALUE))
                     .addGroup(jPanelFilm4Layout.createSequentialGroup()
                         .addGroup(jPanelFilm4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabelTotalSales4, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -459,33 +629,44 @@ public class Cinema extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(jPanelFilm4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabelPrice4, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabelOccPercentage4, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(jPanelFilm4Layout.createSequentialGroup()
-                        .addComponent(jButtonAddSales4)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
-                        .addComponent(jButtonRemoveSales4)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButtonOccupation4)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButtonClean4)
-                        .addContainerGap(46, Short.MAX_VALUE))))
+                            .addComponent(jLabelOccPercentage4, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
             .addGroup(jPanelFilm4Layout.createSequentialGroup()
-                .addGap(174, 174, 174)
-                .addComponent(jButtonIncome4)
+                .addContainerGap()
+                .addComponent(jLabelScreen4)
                 .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelFilm4Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jButtonAddSales4)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButtonRemoveSales4)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButtonOccupation4)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButtonClean4)
+                .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelFilm4Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButtonIncome4)
+                .addGap(189, 189, 189))
+            .addGroup(jPanelFilm4Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabelFilmName4, javax.swing.GroupLayout.PREFERRED_SIZE, 422, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanelFilm4Layout.setVerticalGroup(
             jPanelFilm4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelFilm4Layout.createSequentialGroup()
-                .addContainerGap(26, Short.MAX_VALUE)
+                .addContainerGap(11, Short.MAX_VALUE)
+                .addComponent(jLabelScreen4)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabelFilmName4)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 39, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
                 .addGroup(jPanelFilm4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabelFilm4)
                     .addComponent(jTextFieldFilmSelector4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButtonChange4))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 74, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 70, Short.MAX_VALUE)
                 .addGroup(jPanelFilm4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabelTotalSales4)
                     .addComponent(jLabelPrice4))
@@ -495,7 +676,7 @@ public class Cinema extends javax.swing.JFrame {
                     .addComponent(jLabelOccPercentage4))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabelIncome4)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
                 .addGroup(jPanelFilm4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButtonAddSales4)
                     .addComponent(jButtonRemoveSales4)
@@ -503,7 +684,63 @@ public class Cinema extends javax.swing.JFrame {
                     .addComponent(jButtonClean4))
                 .addGap(18, 18, 18)
                 .addComponent(jButtonIncome4)
-                .addContainerGap(30, Short.MAX_VALUE))
+                .addContainerGap(28, Short.MAX_VALUE))
+        );
+
+        jPanel1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jPanel1.setForeground(new java.awt.Color(255, 153, 153));
+
+        jSliderSales.setMajorTickSpacing(5);
+        jSliderSales.setMaximum(20);
+        jSliderSales.setMinorTickSpacing(1);
+        jSliderSales.setPaintLabels(true);
+        jSliderSales.setPaintTicks(true);
+        jSliderSales.setSnapToTicks(true);
+        jSliderSales.setValue(1);
+        jSliderSales.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseDragged(java.awt.event.MouseEvent evt) {
+                jSliderSalesMouseDragged(evt);
+            }
+        });
+        jSliderSales.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                jSliderSalesMouseReleased(evt);
+            }
+        });
+
+        jLabelSales.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabelSales.setText("Increase/Decrease sales by 1");
+
+        jLabelTotalIncome.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabelTotalIncome.setText("Total income: 0€");
+
+        jButtonTotalIncome.setText("Total income");
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(26, 26, 26)
+                .addComponent(jLabelSales, javax.swing.GroupLayout.PREFERRED_SIZE, 269, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jSliderSales, javax.swing.GroupLayout.PREFERRED_SIZE, 345, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(86, 86, 86)
+                .addComponent(jLabelTotalIncome)
+                .addGap(18, 18, 18)
+                .addComponent(jButtonTotalIncome, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap(22, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jSliderSales, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabelSales)
+                    .addComponent(jLabelTotalIncome)
+                    .addComponent(jButtonTotalIncome, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -522,23 +759,154 @@ public class Cinema extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 45, Short.MAX_VALUE)
                         .addComponent(jPanelFilm2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(45, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(21, 21, 21)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanelFilm2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jPanelFilm1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 45, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jPanelFilm3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jPanelFilm4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(45, Short.MAX_VALUE))
+                .addGap(18, 18, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanelFilm3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPanelFilm4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(41, 41, 41)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jTextFieldFilmSelector1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldFilmSelector1ActionPerformed
+        
+    }//GEN-LAST:event_jTextFieldFilmSelector1ActionPerformed
+
+    private void jButtonChange1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonChange1ActionPerformed
+        changeMovieName(jLabelFilmName1, jTextFieldFilmSelector1);
+    }//GEN-LAST:event_jButtonChange1ActionPerformed
+
+    private void jButtonChange2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonChange2ActionPerformed
+        changeMovieName(jLabelFilmName2, jTextFieldFilmSelector2);
+    }//GEN-LAST:event_jButtonChange2ActionPerformed
+
+    private void jButtonChange3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonChange3ActionPerformed
+        changeMovieName(jLabelFilmName3, jTextFieldFilmSelector3);
+    }//GEN-LAST:event_jButtonChange3ActionPerformed
+
+    private void jButtonChange4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonChange4ActionPerformed
+        changeMovieName(jLabelFilmName4, jTextFieldFilmSelector4);
+    }//GEN-LAST:event_jButtonChange4ActionPerformed
+
+    private void jSliderSalesMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jSliderSalesMouseReleased
+        jLabelSales.setText("Increase/Decrease sales by " + jSliderSales.getValue());
+    }//GEN-LAST:event_jSliderSalesMouseReleased
+
+    private void jSliderSalesMouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jSliderSalesMouseDragged
+        jLabelSales.setText("Increase/Decrease sales by " + jSliderSales.getValue());
+    }//GEN-LAST:event_jSliderSalesMouseDragged
+
+    private void jButtonAddSales1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAddSales1ActionPerformed
+        sales1 += jSliderSales.getValue();
+        addSales(sales1, 100, jLabelTotalSales1, jLabelCapacity1);
+        if (sales1 > 100) {
+            sales1 = 100;
+        }
+    }//GEN-LAST:event_jButtonAddSales1ActionPerformed
+
+    private void jButtonRemoveSales1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRemoveSales1ActionPerformed
+        sales1 -= jSliderSales.getValue();
+        removeSales(sales1, 100, jLabelTotalSales1, jLabelCapacity1);
+        if (sales1 < 0) {
+            sales1 = 0;
+        }
+    }//GEN-LAST:event_jButtonRemoveSales1ActionPerformed
+
+    private void jButtonAddSales2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAddSales2ActionPerformed
+        sales2 += jSliderSales.getValue();
+        addSales(sales2, 70, jLabelTotalSales2, jLabelCapacity2);
+        if (sales2 > 70) {
+            sales2 = 70;
+        }
+    }//GEN-LAST:event_jButtonAddSales2ActionPerformed
+
+    private void jButtonRemoveSales2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRemoveSales2ActionPerformed
+        sales2 -= jSliderSales.getValue();
+        removeSales(sales2, 100, jLabelTotalSales2, jLabelCapacity2);
+        if (sales2 < 0) {
+            sales2 = 0;
+        }
+    }//GEN-LAST:event_jButtonRemoveSales2ActionPerformed
+
+    private void jButtonAddSales3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAddSales3ActionPerformed
+        sales3 += jSliderSales.getValue();
+        addSales(sales3, 70, jLabelTotalSales3, jLabelCapacity3);
+        if (sales3 > 70) {
+            sales3 = 70;
+        }
+    }//GEN-LAST:event_jButtonAddSales3ActionPerformed
+
+    private void jButtonRemoveSales3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRemoveSales3ActionPerformed
+        sales3 -= jSliderSales.getValue();
+        removeSales(sales3, 70, jLabelTotalSales3, jLabelCapacity3);
+        if (sales3 < 0) {
+            sales3 = 0;
+        }
+    }//GEN-LAST:event_jButtonRemoveSales3ActionPerformed
+
+    private void jButtonAddSales4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAddSales4ActionPerformed
+        sales4 += jSliderSales.getValue();
+        addSales(sales4, 30, jLabelTotalSales4, jLabelCapacity4);
+        if (sales4 > 30) {
+            sales4 = 30;
+        }
+    }//GEN-LAST:event_jButtonAddSales4ActionPerformed
+
+    private void jButtonRemoveSales4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRemoveSales4ActionPerformed
+        sales4 -= jSliderSales.getValue();
+        removeSales(sales4, 30, jLabelTotalSales4, jLabelCapacity4);
+        if (sales4 < 0) {
+            sales4 = 0;
+        }
+    }//GEN-LAST:event_jButtonRemoveSales4ActionPerformed
+
+    private void jButtonOccupation1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonOccupation1ActionPerformed
+        calculateOccupancyRate(sales1, 100, jLabelOccPercentage1);
+    }//GEN-LAST:event_jButtonOccupation1ActionPerformed
+
+    private void jButtonOccupation2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonOccupation2ActionPerformed
+        calculateOccupancyRate(sales2, 70, jLabelOccPercentage2);
+    }//GEN-LAST:event_jButtonOccupation2ActionPerformed
+
+    private void jButtonOccupation3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonOccupation3ActionPerformed
+        calculateOccupancyRate(sales3, 70, jLabelOccPercentage3);
+    }//GEN-LAST:event_jButtonOccupation3ActionPerformed
+
+    private void jButtonOccupation4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonOccupation4ActionPerformed
+        calculateOccupancyRate(sales4, 30, jLabelOccPercentage4);
+    }//GEN-LAST:event_jButtonOccupation4ActionPerformed
+
+    private void jButtonClean1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonClean1ActionPerformed
+        sales1 = 0;
+        clearSales(100, jLabelTotalSales1, jLabelCapacity1);
+    }//GEN-LAST:event_jButtonClean1ActionPerformed
+
+    private void jButtonIncome1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonIncome1ActionPerformed
+        calculateIncome(jLabelIncome1, sales1, 6);
+    }//GEN-LAST:event_jButtonIncome1ActionPerformed
+
+    private void jButtonIncome2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonIncome2ActionPerformed
+        calculateIncome(jLabelIncome2, sales2, 8);
+    }//GEN-LAST:event_jButtonIncome2ActionPerformed
+
+    private void jButtonIncome3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonIncome3ActionPerformed
+        calculateIncome(jLabelIncome3, sales3, 8);
+    }//GEN-LAST:event_jButtonIncome3ActionPerformed
+
+    private void jButtonIncome4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonIncome4ActionPerformed
+        calculateIncome(jLabelIncome4, sales4, 12);
+    }//GEN-LAST:event_jButtonIncome4ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -574,6 +942,54 @@ public class Cinema extends javax.swing.JFrame {
             }
         });
     }
+    
+    private void changeMovieName(JLabel movieTitle, JTextField title) {
+        if (!title.getText().trim().isEmpty() && title.getText() != null) {
+            movieTitle.setText(title.getText());
+            title.setText("");
+        } else {
+            movieTitle.setText("Film name");
+        }
+    }
+    
+    public void addSales(int sales, int maxSales, JLabel totalSales, JLabel totalCapacity) {
+        if (sales <= maxSales) {
+            totalSales.setText("Total sales: " + sales);
+            totalCapacity.setText("Capacity: " + sales + "/" + maxSales);
+        } else {
+            JOptionPane.showMessageDialog(null, "No se pueden añadir más ventas.");
+            totalCapacity.setText("Capacity: " + maxSales + "/" + maxSales);
+            totalSales.setText("Total sales: " + maxSales);
+        }
+    }
+    
+    public void removeSales(int sales, int maxSales, JLabel totalSales, JLabel totalCapacity) {
+        if (sales >= 0) {
+            totalSales.setText("Total sales: " + sales);
+            totalCapacity.setText("Capacity: " + sales + "/" + maxSales);
+        } else {
+            JOptionPane.showMessageDialog(null, "Las ventas no pueden ser inferior a 0.");
+            totalCapacity.setText("Capacity: 0/" + maxSales);
+            totalSales.setText("Total sales: 0");
+        }
+    }
+    
+    public void calculateOccupancyRate(int sales, int maxSales, JLabel occupancyPercentage) {
+        double occupancyRate = ((double)sales / maxSales) * 100;
+        double rounded = Math.round(occupancyRate * 100.0) / 100.0;
+        occupancyPercentage.setText(String.format("Occupation percentage: " + rounded + "%%"));
+    }
+    
+    public void clearSales(int maxSales, JLabel totalSales, JLabel capacity) {
+        totalSales.setText("Total sales: 0");
+        capacity.setText("Capacity: 0/" + maxSales);
+    }
+    
+    public void calculateIncome(JLabel income, int sales, int price) {
+        int totalIncome = sales * price;
+        income.setText("Income: " + totalIncome + "€");
+    }
+   
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonAddSales1;
@@ -600,6 +1016,7 @@ public class Cinema extends javax.swing.JFrame {
     private javax.swing.JButton jButtonRemoveSales2;
     private javax.swing.JButton jButtonRemoveSales3;
     private javax.swing.JButton jButtonRemoveSales4;
+    private javax.swing.JButton jButtonTotalIncome;
     private javax.swing.JLabel jLabelCapacity1;
     private javax.swing.JLabel jLabelCapacity2;
     private javax.swing.JLabel jLabelCapacity3;
@@ -624,17 +1041,27 @@ public class Cinema extends javax.swing.JFrame {
     private javax.swing.JLabel jLabelPrice2;
     private javax.swing.JLabel jLabelPrice3;
     private javax.swing.JLabel jLabelPrice4;
+    private javax.swing.JLabel jLabelSales;
+    private javax.swing.JLabel jLabelScreen1;
+    private javax.swing.JLabel jLabelScreen2;
+    private javax.swing.JLabel jLabelScreen3;
+    private javax.swing.JLabel jLabelScreen4;
+    private javax.swing.JLabel jLabelTotalIncome;
     private javax.swing.JLabel jLabelTotalSales1;
     private javax.swing.JLabel jLabelTotalSales2;
     private javax.swing.JLabel jLabelTotalSales3;
     private javax.swing.JLabel jLabelTotalSales4;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanelFilm1;
     private javax.swing.JPanel jPanelFilm2;
     private javax.swing.JPanel jPanelFilm3;
     private javax.swing.JPanel jPanelFilm4;
+    private javax.swing.JSlider jSliderSales;
     private javax.swing.JTextField jTextFieldFilmSelector1;
     private javax.swing.JTextField jTextFieldFilmSelector2;
     private javax.swing.JTextField jTextFieldFilmSelector3;
     private javax.swing.JTextField jTextFieldFilmSelector4;
     // End of variables declaration//GEN-END:variables
 }
+
+
