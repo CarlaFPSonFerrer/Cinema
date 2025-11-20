@@ -93,11 +93,11 @@
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jLabelTotalSales1" alignment="0" min="-2" pref="85" max="-2" attributes="0"/>
-                              <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
+                              <Group type="103" groupAlignment="1" max="-2" attributes="0">
                                   <Component id="jLabelIncome1" alignment="0" max="32767" attributes="0"/>
                                   <Component id="jLabelCapacity1" alignment="0" pref="85" max="32767" attributes="0"/>
                               </Group>
+                              <Component id="jLabelTotalSales1" min="-2" pref="98" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
@@ -136,7 +136,7 @@
                                   <Component id="jLabelFilmName1" min="-2" pref="420" max="-2" attributes="0"/>
                               </Group>
                           </Group>
-                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                          <EmptySpace min="0" pref="22" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
@@ -146,7 +146,7 @@
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace pref="15" max="32767" attributes="0"/>
+                  <EmptySpace pref="18" max="32767" attributes="0"/>
                   <Component id="jLabelScreen1" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Component id="jLabelFilmName1" min="-2" max="-2" attributes="0"/>
@@ -156,7 +156,7 @@
                       <Component id="jTextFieldFilmSelector1" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jButtonChange1" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace pref="67" max="32767" attributes="0"/>
+                  <EmptySpace pref="70" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabelTotalSales1" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jLabelPrice1" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -168,7 +168,7 @@
                   </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Component id="jLabelIncome1" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="31" max="32767" attributes="0"/>
+                  <EmptySpace pref="34" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jButtonAddSales1" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jButtonRemoveSales1" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -177,7 +177,7 @@
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Component id="jButtonIncome1" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="28" max="32767" attributes="0"/>
+                  <EmptySpace pref="31" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -279,7 +279,7 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI" size="14" style="1"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="SALA PREMIUM"/>
+            <Property name="text" type="java.lang.String" value="SALA B&#xc1;SICA"/>
           </Properties>
         </Component>
       </SubComponents>
@@ -354,14 +354,14 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="jLabelFilmName2" min="-2" pref="425" max="-2" attributes="0"/>
-                  <EmptySpace max="32767" attributes="0"/>
+                  <EmptySpace pref="23" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace pref="11" max="32767" attributes="0"/>
+                  <EmptySpace pref="14" max="32767" attributes="0"/>
                   <Component id="jLabelScreen2" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Component id="jLabelFilmName2" min="-2" max="-2" attributes="0"/>
@@ -371,7 +371,7 @@
                       <Component id="jTextFieldFilmSelector2" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jButtonChange2" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace pref="70" max="32767" attributes="0"/>
+                  <EmptySpace pref="73" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabelTotalSales2" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jLabelPrice2" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -383,7 +383,7 @@
                   </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Component id="jLabelIncome2" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="32" max="32767" attributes="0"/>
+                  <EmptySpace pref="35" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jButtonAddSales2" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jButtonRemoveSales2" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -392,7 +392,7 @@
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Component id="jButtonIncome2" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="28" max="32767" attributes="0"/>
+                  <EmptySpace pref="31" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -474,6 +474,9 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="Clean"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonClean2ActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="jButtonIncome2">
           <Properties>
@@ -567,14 +570,14 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="jLabelFilmName3" min="-2" pref="424" max="-2" attributes="0"/>
-                  <EmptySpace max="32767" attributes="0"/>
+                  <EmptySpace pref="24" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace pref="9" max="32767" attributes="0"/>
+                  <EmptySpace pref="13" max="32767" attributes="0"/>
                   <Component id="jLabelScreen3" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Component id="jLabelFilmName3" min="-2" max="-2" attributes="0"/>
@@ -584,7 +587,7 @@
                       <Component id="jTextFieldFilmSelector3" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jButtonChange3" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace pref="68" max="32767" attributes="0"/>
+                  <EmptySpace pref="72" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabelTotalSales3" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jLabelPrice3" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -596,7 +599,7 @@
                   </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Component id="jLabelIncome3" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="36" max="32767" attributes="0"/>
+                  <EmptySpace pref="40" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jButtonAddSales3" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jButtonRemoveSales3" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -687,6 +690,9 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="Clean"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonClean3ActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="jButtonIncome3">
           <Properties>
@@ -776,14 +782,14 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="jLabelFilmName4" min="-2" pref="422" max="-2" attributes="0"/>
-                  <EmptySpace max="32767" attributes="0"/>
+                  <EmptySpace pref="26" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace pref="11" max="32767" attributes="0"/>
+                  <EmptySpace pref="14" max="32767" attributes="0"/>
                   <Component id="jLabelScreen4" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Component id="jLabelFilmName4" min="-2" max="-2" attributes="0"/>
@@ -793,7 +799,7 @@
                       <Component id="jTextFieldFilmSelector4" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jButtonChange4" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace pref="70" max="32767" attributes="0"/>
+                  <EmptySpace pref="73" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabelTotalSales4" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jLabelPrice4" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -805,7 +811,7 @@
                   </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Component id="jLabelIncome4" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="32" max="32767" attributes="0"/>
+                  <EmptySpace pref="35" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jButtonAddSales4" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jButtonRemoveSales4" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -814,7 +820,7 @@
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Component id="jButtonIncome4" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="28" max="32767" attributes="0"/>
+                  <EmptySpace pref="31" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -896,6 +902,9 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="Clean"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonClean4ActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="jButtonIncome4">
           <Properties>
@@ -910,20 +919,23 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI" size="14" style="1"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="SALA MINI"/>
+            <Property name="text" type="java.lang.String" value="SALA PREMIUM"/>
           </Properties>
         </Component>
       </SubComponents>
     </Container>
     <Container class="javax.swing.JPanel" name="jPanel1">
       <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="66" green="66" red="66" type="rgb"/>
+        </Property>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="org.netbeans.modules.form.compat2.border.BevelBorderInfo">
             <BevelBorder/>
           </Border>
         </Property>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="99" green="99" red="ff" type="rgb"/>
+          <Color blue="33" green="33" red="ff" type="rgb"/>
         </Property>
       </Properties>
 
@@ -935,9 +947,9 @@
                   <Component id="jLabelSales" min="-2" pref="269" max="-2" attributes="0"/>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Component id="jSliderSales" min="-2" pref="345" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="86" max="-2" attributes="0"/>
-                  <Component id="jLabelTotalIncome" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="68" max="-2" attributes="0"/>
+                  <Component id="jLabelTotalIncome" min="-2" pref="171" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
                   <Component id="jButtonTotalIncome" min="-2" pref="135" max="-2" attributes="0"/>
                   <EmptySpace max="32767" attributes="0"/>
               </Group>
@@ -994,6 +1006,9 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="Total income"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonTotalIncomeActionPerformed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>
